@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== 'production') {
-   require('dotenv').config()
+   require('dotenv').config({path: './.env'})
 }
 
 const express = require('express')
@@ -19,7 +19,6 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
 const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
-mongoose.set('strictQuery', true);
 
 app.use('/', indexRouter)
 
