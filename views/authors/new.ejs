@@ -1,1 +1,7 @@
-New Authors
+<h3>New Author</h3>
+<form action="/authors" method="POST">
+   <%- include('_form_fields.ejs') %>
+   <input type="text" name="name" id="name">
+   <input type="submit" value="Create Author" />
+   <input type="submit" value="Cancel" />
+</form>
