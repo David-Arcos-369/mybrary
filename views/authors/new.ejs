@@ -1,6 +1,7 @@
 <h3>New Author</h3>
 <form action="/authors" method="POST">
-   <%- include('_form_fields.ejs') %>
-   <button type="submit" value="Create Author" >Add Author </button>
-   <a href="/authors">CANCEL</a>
+   <%- include('_form_fields') %>
+
+   <a href="/authors">CANCEL</a><br><br>
+   <button type="submit" value="Create Author">Add Author </button>
 </form>
