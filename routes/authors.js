@@ -7,14 +7,26 @@ router.get('/', (req, res) => {
 res.render('authors/index')
 })
 
-//Single author route
+//New author route
 router.get('/new', (req, res) => {
    res.render('authors/new', {author: new Author()})
 })
 
 // Create authors route
 router.post('/', (req, res) => {
-   res.send(req.body.name)
+   const author = new Author({
+      name: req.body.name
+   })
+   author.save((err, newAuthor) => {
+      if (err) {
+         res.render('authors/new', {
+            author: author,
+            errorMessage: "there is an error over here"
+         })
+      } else {
+         //res.redirect(`authors/${newAuthor.id}`)
+         res.redirect( 'authors' )
+      }
+   })
 })
-
 module.exports = router;
