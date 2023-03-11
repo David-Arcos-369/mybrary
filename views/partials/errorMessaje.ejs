@@ -1,1 +1,6 @@
-<div><%= errorMessage %></div>
+<% if (locals.errorMessage != null) { %>
+    <div>
+        <%= errorMessage %>
+    </div>
+<% } %>
+

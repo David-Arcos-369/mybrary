@@ -1,1 +1,12 @@
-This message is posting from views/authors/index.ejs All Authors
+<h3> Search Authors</h3>
+<form action="/authors" method="GET">
+   <input type="text" name="search" placeholder="Search by name">
+   <button type="submit" value="<% searchOptions.name %>">Search</button>
+</form>
+<br>
+<h4> Authors List</h4>
+<% authors.forEach(author=> { %>
+   <div>
+      <%= author.name %>
+   </div>
+   <% }) %>
